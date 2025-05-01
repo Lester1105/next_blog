@@ -2,6 +2,9 @@ import PostCard from "@/components/PostCard";
 import { getCollection } from "@/lib/db";
 import { ObjectId } from "mongodb";
 
+export function generateStaticParams() {
+    return [{ id: '1' }, { id: '2' }, { id: '3' }]
+  }
 export default async function Show({params}) {
     const {id} = await params;
     const postsCollection = await getCollection('posts')
